@@ -1,0 +1,72 @@
+# Default RealSense L515 parameters passed to rs_launch.py
+camera:
+  ros__parameters:
+    # enable_accel: true
+    # enable_gyro: true
+    # unite_imu_method: 2
+    # align_depth.enable: true
+    # publish_tf: true
+    # publish_odom_tf: true
+    # tf_publish_rate: 1.0
+
+    # depth_qos: "SYSTEM_DEFAULT"
+    # color_qos: "SYSTEM_DEFAULT"
+    # pointcloud.pointcloud_qos: "SYSTEM_DEFAULT"
+    # diagnostics_period: 0.0
+
+    # Streams
+    enable_depth: true
+    enable_color: true
+    enable_gyro: true
+    enable_accel: true
+
+    # Alignment & clipping
+    align_depth.enable: true
+    clip_distance: 5.0            # meters (set to 0.0 to disable)
+
+    # Depth module
+    # depth_module.profile: "640x480x30"
+    # depth_module.laser_power: 150 # adjust for your scene
+    depth_module.min_distance: 0.25
+    depth_module.confidence_threshold: 1
+    depth_module.enable_max_usable_range: true
+    depth_module.noise_filtering: 2
+
+    # RGB
+    # rgb_camera.profile: "1280x720x30"
+    rgb_camera.enable_auto_exposure: true
+    rgb_camera.enable_auto_white_balance: true
+
+    # Filters
+    # decimation_filter.enable: true
+    # decimation_filter.filter_magnitude: 2
+    # spatial_filter.enable: true
+    # spatial_filter.filter_smooth_alpha: 0.5
+    # spatial_filter.filter_smooth_delta: 20
+    # spatial_filter.holes_fill: 1
+    # temporal_filter.enable: true
+    # hole_filling_filter.enable: true
+    # disparity_to_depth.enable: true
+
+    # Pointcloud
+    pointcloud.enable: true
+    pointcloud.ordered_pc: false
+
+    # IMU handling
+    unite_imu_method: 2
+    hold_back_imu_for_frames: false
+    angular_velocity_cov: 0.01
+    linear_accel_cov: 0.01
+
+    # TFs
+    publish_tf: true
+    publish_odom_tf: true
+    tf_publish_rate: 1.0
+    # base_frame_id: "camera_link"
+    # camera_name: "camera"
+
+    # QoS & diagnostics
+    depth_qos: "SYSTEM_DEFAULT"
+    color_qos: "SYSTEM_DEFAULT"
+    pointcloud.pointcloud_qos: "SYSTEM_DEFAULT"
+    diagnostics_period: 0.0

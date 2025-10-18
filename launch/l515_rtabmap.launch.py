@@ -33,7 +33,7 @@ def generate_launch_description() -> LaunchDescription:
             ])
         ),
         launch_arguments={
-            'params_file': LaunchConfiguration('realsense_params_file'),
+            'config_file': LaunchConfiguration('realsense_params_file'),
         }.items(),
     )
 
